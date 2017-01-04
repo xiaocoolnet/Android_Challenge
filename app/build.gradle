@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'config'
+            keyPassword '320306'
+            storeFile file('F:/Challenge_android/app/debug.jks')
+            storePassword '320306'
+        }
+    }
+
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        applicationId "com.example.chy.challenge"
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+}
+apply plugin: 'com.neenbedankt.android-apt'//增加这一句
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile files('libs/org.apache.http.legacy.jar')
+    compile files('libs/httpmime-4.1.2.jar')
+    compile files('libs/locSDK_6.23.jar')
+    compile files('libs/universal-image-loader-1.9.3.jar')
+    compile 'com.android.support:support-v4:24.1.1'
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.jakewharton:butterknife:8.1.0'
+    compile files('libs/volley.jar')
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.zhy:flowlayout-lib:1.0.3'
+    //流式布局
+    compile files('libs/weibosdkcore_release.jar')
+    compile 'com.baoyz.actionsheet:library:1.1.7'
+    compile 'cn.finalteam:galleryfinal:1.4.6'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.blankj:utilcode:1.3.5'
+    compile 'pub.devrel:easypermissions:0.2.1'
+}

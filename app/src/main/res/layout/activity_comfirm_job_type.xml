@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray2">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_layout_45">
+        <include layout="@layout/title_back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="选择职位"
+            android:textColor="@color/white"
+            android:textSize="@dimen/activity_text_18" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <ListView
+            android:id="@+id/lv_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray2"
+            android:divider="@null"
+            android:layout_weight="4">
+        </ListView>
+        <ListView
+            android:id="@+id/lv_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:divider="@null"
+            android:layout_weight="6">
+        </ListView>
+    </LinearLayout>
+</LinearLayout>

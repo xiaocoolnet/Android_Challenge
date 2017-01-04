@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/iv_gongpai"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@mipmap/ic_gongpai"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.上传工牌正面，保证Boss姓名、职务、头像与个人信息一致"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.确保公章的公司全称，与您个人信息的公司全称一致"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="3.确保所有信息清晰可辨认"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/green"
+            android:text="工牌"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+    </LinearLayout>
+    
+</RelativeLayout>
