@@ -74,7 +74,7 @@
                             android:layout_width="@dimen/activity_layout_50"
                             android:layout_height="@dimen/activity_layout_50"
                             android:layout_marginLeft="10dp"
-                            android:background="@mipmap/ic_wode" />
+                            android:src="@mipmap/ic_wode" />
 
                         <LinearLayout
                             android:id="@+id/linearLayout"

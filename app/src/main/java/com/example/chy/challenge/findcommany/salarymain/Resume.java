@@ -21,10 +21,10 @@ import com.example.chy.challenge.Utils.NetBaseUtils;
 import com.example.chy.challenge.button.RevealButton;
 import com.example.chy.challenge.button.RoundImageView;
 import com.example.chy.challenge.button.WaveView;
+import com.example.chy.challenge.findcommany.mine.EditJobLiveActivity;
 import com.example.chy.challenge.findcommany.resume.Mine_Resume;
 import com.example.chy.challenge.findcommany.resume.Write_personal_prohect;
 import com.example.chy.challenge.findcommany.resume.Write_resume_education;
-import com.example.chy.challenge.login.register.Register_Commany_info;
 import com.example.chy.challenge.login.register.commany_info.Register_Mine_advantage;
 import com.example.chy.challenge.login.register.commany_info.Register_Mine_intention;
 import com.example.chy.challenge.login.register.commany_info.Write_personal_jobnews;
@@ -344,7 +344,8 @@ public class Resume extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.updata_personal_info://个人信息
-                intent = new Intent(mContext, Register_Commany_info.class);
+                //intent = new Intent(mContext, EditPersonalActivity.class);
+                intent = new Intent(mContext, EditJobLiveActivity.class);
                 intent.putExtra("pagetype","company");
                 startActivity(intent);
                 break;

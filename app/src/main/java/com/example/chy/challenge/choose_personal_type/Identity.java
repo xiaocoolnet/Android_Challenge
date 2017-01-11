@@ -6,15 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
-import com.example.chy.challenge.Findpersoanl.TalentMain;
+import com.example.chy.challenge.Findpersoanl.mine.EditPersonalInfoActivity;
 import com.example.chy.challenge.R;
 import com.example.chy.challenge.WelcomSalary;
 import com.example.chy.challenge.WelcomTalent;
 import com.example.chy.challenge.button.RevealButton;
-import com.example.chy.challenge.findcommany.SalaryMain;
 import com.example.chy.challenge.login.register.Register_Commany_info;
 import com.example.chy.challenge.login.register.Register_personal_info;
-import com.example.chy.challenge.login.register.register_bean.UserInfo;
 import com.example.chy.challenge.login.register.register_bean.UserInfoBean;
 
 /**
@@ -51,7 +49,7 @@ public class Identity extends Activity implements View.OnClickListener {
         switch (view.getId()){
             case R.id.forperson:
                 if ("register".equals(pagetype)){
-                    intent = new Intent(mactivity, Register_personal_info.class);
+                    intent = new Intent(mactivity, EditPersonalInfoActivity.class);
                     intent.putExtra("pagetype","register");
                     startActivity(intent);
 
@@ -60,8 +58,6 @@ public class Identity extends Activity implements View.OnClickListener {
                         intent = new Intent(mactivity,WelcomTalent.class);
                         startActivity(intent);
                     }else if ("1".equals(infobean.getUsertype())){
-//                        intent = new Intent(mactivity,WelcomTalent.class);
-//                        startActivity(intent);
                         intent = new Intent(mactivity,Register_personal_info.class);
                         intent.putExtra("pagetype","login1");
                         startActivity(intent);

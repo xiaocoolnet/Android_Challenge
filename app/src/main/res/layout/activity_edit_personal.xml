@@ -32,6 +32,7 @@
         </com.example.chy.challenge.button.WaveView>
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
@@ -69,18 +70,16 @@
                         android:layout_centerVertical="true"
                         android:gravity="center_vertical"
                         >
-                        <com.example.chy.challenge.button.RoundImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/commany_head_avater_rundimage"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/ic_default"
-                            />
+                            android:src="@drawable/ic_default" />
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@mipmap/ic_jiantoulv"
-                            android:layout_marginLeft="10dp"
-                            />
+                            android:layout_marginLeft="10dp" />
                     </LinearLayout>
                 </com.example.chy.challenge.button.WaveView>
                 <View
@@ -114,7 +113,7 @@
                             android:id="@+id/commany_tv_realname"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="请输入真是姓名"
+                            android:hint="请输入真是姓名"
                             android:gravity="right|center_vertical"
                             android:textSize="14sp"
                             android:textColor="@color/gray4"
@@ -133,7 +132,6 @@
                     android:background="@color/gray2"
                     />
                 <RelativeLayout
-                    android:id="@+id/commany_mine_sex"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:background="@color/white"
@@ -166,8 +164,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="女"
-                                android:button="@null"
-                                android:drawableLeft="@drawable/btn_rbtn_sex"
                                 android:textSize="@dimen/activity_text_16"
                                 android:textColor="@color/gray4"
                                 />
@@ -175,10 +171,8 @@
                                 android:id="@+id/commany_rbtn_man"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/activity_layout_30"
+                                android:layout_marginLeft="10dp"
                                 android:text="男"
-                                android:button="@null"
-                                android:drawableLeft="@drawable/btn_rbtn_sex"
                                 android:textSize="@dimen/activity_text_16"
                                 android:textColor="@color/gray4"
                                 />
@@ -219,6 +213,7 @@
                             android:layout_height="match_parent"
                             android:gravity="right|center_vertical"
                             android:textSize="14sp"
+                            android:hint="选择您目前所在城市"
                             android:textColor="@color/gray4"
                             />
                         <ImageView
@@ -264,7 +259,7 @@
                             android:gravity="right|center_vertical"
                             android:textSize="14sp"
                             android:textColor="@color/gray4"
-                            />
+                            android:hint="选择工作年限"/>
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -308,7 +303,7 @@
                             android:id="@+id/commany_tv_qq"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="请输入QQ账号"
+                            android:hint="请输入QQ账号"
                             android:gravity="right|center_vertical"
                             android:textSize="14sp"
                             android:textColor="@color/gray4"
@@ -353,7 +348,7 @@
                             android:id="@+id/commany_tv_weixin"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="请输入微信账号"
+                            android:hint="请输入微信账号"
                             android:gravity="right|center_vertical"
                             android:textSize="14sp"
                             android:textColor="@color/gray4"
@@ -398,7 +393,7 @@
                             android:id="@+id/commany_tv_weibo"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="请输入微博账号"
+                            android:hint="请输入微博账号"
                             android:gravity="right|center_vertical"
                             android:textSize="14sp"
                             android:textColor="@color/gray4"

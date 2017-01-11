@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chy.challenge.Findpersoanl.mine.AuthenticationActivity;
+import com.example.chy.challenge.Findpersoanl.mine.EditPersonalInfoActivity;
 import com.example.chy.challenge.Findpersoanl.mine.Mine_Interview_Invitation;
 import com.example.chy.challenge.Findpersoanl.mine.Mine_recruitment;
 import com.example.chy.challenge.Findpersoanl.mine.Mine_vipinfo;
@@ -26,7 +27,6 @@ import com.example.chy.challenge.NetInfo.NetBaseConstant;
 import com.example.chy.challenge.R;
 import com.example.chy.challenge.Utils.ImgLoadUtil;
 import com.example.chy.challenge.button.WaveView;
-import com.example.chy.challenge.login.register.Register_personal_info;
 import com.example.chy.challenge.login.register.register_bean.UserInfoBean;
 
 /**
@@ -100,6 +100,13 @@ public class MineForCompany extends Fragment implements View.OnClickListener{
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        ImgLoadUtil.display(NetBaseConstant.NET_HOST + userInfoBean.getPhoto(),iv_header);
+        tv_name.setText(userInfoBean.getRealname());
+    }
+
+    @Override
     public void onClick(View view) {
 
         switch (view.getId()){
@@ -112,8 +119,9 @@ public class MineForCompany extends Fragment implements View.OnClickListener{
                 startActivity(new Intent(mContext, PostJobActivity.class));
                 break;
             case R.id.mine_company_update://修改个人信息
-                intent  = new Intent(mContext, Register_personal_info.class);
+                intent  = new Intent(mContext, EditPersonalInfoActivity.class);
                 intent.putExtra("pagetype","company");
+                //intent.putExtra("pagetype","company");
                 startActivity(intent);
                 break;
             case R.id.mine_company_approve://认证公司信息

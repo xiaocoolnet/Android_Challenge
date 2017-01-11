@@ -6,9 +6,9 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--location-->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".AppApplication"
@@ -24,8 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".findcommany.location.CityPickerActivity"/>
-        <service android:name=".service.LocationService"/>
+        <activity android:name=".findcommany.location.CityPickerActivity" />
+
+        <service android:name=".service.LocationService" />
+
         <activity android:name=".choose_personal_type.Identity" />
         <activity android:name=".WelcomTalent" />
         <activity android:name=".WelcomSalary" />
@@ -91,7 +93,12 @@
         <activity android:name=".Findpersoanl.mine.MyInvitationAllActivity" />
         <activity android:name=".Findpersoanl.mine.AuthenticationActivity" />
         <activity android:name=".Findpersoanl.mine.PostAuthenticationActivity" />
-        <activity android:name=".Findpersoanl.mine.MyBlacklistActivity"></activity>
+        <activity android:name=".Findpersoanl.mine.MyBlacklistActivity" />
+        <activity android:name=".Findpersoanl.mine.EditPersonalInfoActivity" />
+        <activity android:name=".Findpersoanl.mine.EditInfo2Activity" />
+        <activity android:name=".findcommany.mine.EditPersonalActivity" />
+        <activity android:name=".findcommany.mine.EditEducaitonActivity" />
+        <activity android:name=".findcommany.mine.EditJobLiveActivity"></activity>
     </application>
 
 </manifest>

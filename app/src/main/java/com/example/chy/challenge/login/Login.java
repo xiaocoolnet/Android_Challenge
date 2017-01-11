@@ -15,13 +15,15 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.chy.challenge.button.Constants;
-import com.example.chy.challenge.choose_personal_type.Identity;
 import com.example.chy.challenge.NetInfo.UserRequest;
 import com.example.chy.challenge.R;
 import com.example.chy.challenge.Utils.NetBaseUtils;
+import com.example.chy.challenge.WelcomSalary;
+import com.example.chy.challenge.WelcomTalent;
+import com.example.chy.challenge.button.Constants;
 import com.example.chy.challenge.button.RevealButton;
 import com.example.chy.challenge.button.WaveView;
+import com.example.chy.challenge.choose_personal_type.Identity;
 import com.example.chy.challenge.login.register.register_bean.UserInfoBean;
 import com.example.chy.challenge.login.weibo.AccessTokenKeeper;
 import com.sina.weibo.sdk.auth.AuthInfo;
@@ -60,9 +62,17 @@ public class Login extends Activity implements View.OnClickListener{
         mContext = this;
         infobean = new UserInfoBean(mContext);
         if(infobean.isLogined()){
-            Intent intent = new Intent(mContext,Identity.class);
-            intent.putExtra("pagetype","login");
-            startActivity(intent);
+            if(infobean.getUsertype().equals("2")){
+                //找人才
+                Intent intent = new Intent(mContext,WelcomTalent.class);
+                startActivity(intent);
+                finish();
+            }else if(infobean.getUsertype().equals("1")){
+                //挑战高薪
+                Intent intent = new Intent(mContext,WelcomSalary.class);
+                startActivity(intent);
+                finish();
+            }
         }
         // 创建微博实例
         //mWeiboAuth = new WeiboAuth(this, Constants.APP_KEY, Constants.REDIRECT_URL, Constants.SCOPE);
@@ -169,10 +179,23 @@ public class Login extends Activity implements View.OnClickListener{
                                   infobean.setWork_life(json.getString("work_life"));
                                   infobean.setCompany(json.getString("company"));
                                   infobean.setMyjob(json.getString("myjob"));
-                                  Intent intent = new Intent(mContext,Identity.class);
-                                  intent.putExtra("pagetype","login");
-                                  startActivity(intent);
-                                  finish();
+                                  //没有身份第一次登录
+                                  if(infobean.getUsertype().equals("0")){
+                                      Intent intent = new Intent(mContext,Identity.class);
+                                      intent.putExtra("pagetype","register");
+                                      startActivity(intent);
+                                      finish();
+                                  }else if(infobean.getUsertype().equals("2")){
+                                      //找人才
+                                      Intent intent = new Intent(mContext,WelcomTalent.class);
+                                      startActivity(intent);
+                                      finish();
+                                  }else if(infobean.getUsertype().equals("1")){
+                                      //挑战高薪
+                                      Intent intent = new Intent(mContext,WelcomSalary.class);
+                                      startActivity(intent);
+                                      finish();
+                                  }
                               }else {
                                   Toast.makeText(mContext, R.string.login_error,Toast.LENGTH_SHORT).show();
                                   new Thread(){

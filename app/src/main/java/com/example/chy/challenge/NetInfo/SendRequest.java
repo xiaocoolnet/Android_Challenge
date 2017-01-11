@@ -76,4 +76,22 @@ public class SendRequest {
             }
         }.start();
     }
+    //更新个人信息(挑战高薪)
+    public void updataPersonal(final String data,final int KEY) {
+        new Thread() {
+            Message msg = Message.obtain();
+            public void run() {
+                String result_data = NetUtil.getResponse(UserNetConstant.UPDATEPERSONAL, data);
+                try {
+                    JSONObject obj = new JSONObject(result_data);
+                    msg.what = KEY;
+                    msg.obj = obj;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } finally {
+                    handler.sendMessage(msg);
+                }
+            }
+        }.start();
+    }
 }

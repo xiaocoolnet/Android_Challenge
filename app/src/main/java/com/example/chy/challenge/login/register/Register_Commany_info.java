@@ -24,8 +24,8 @@ import android.widget.Toast;
 import com.example.chy.challenge.NetInfo.NetBaseConstant;
 import com.example.chy.challenge.NetInfo.UserRequest;
 import com.example.chy.challenge.R;
-import com.example.chy.challenge.button.Public_static_all;
 import com.example.chy.challenge.Utils.NetBaseUtils;
+import com.example.chy.challenge.button.Public_static_all;
 import com.example.chy.challenge.button.RoundImageView;
 import com.example.chy.challenge.button.WaveView;
 import com.example.chy.challenge.login.Login;
@@ -33,7 +33,6 @@ import com.example.chy.challenge.login.register.commany_info.Register_next_educa
 import com.example.chy.challenge.login.register.commany_info.location.ActivityAddlocation;
 import com.example.chy.challenge.login.register.personal_pop.Commany_camera;
 import com.example.chy.challenge.login.register.personal_pop.Commany_personal_jobtime;
-import com.example.chy.challenge.login.register.personal_pop.Pop_mine_jobtime;
 import com.example.chy.challenge.login.register.register_bean.UserInfo;
 import com.example.chy.challenge.login.register.register_bean.UserInfoBean;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -119,7 +118,7 @@ public class Register_Commany_info extends Activity implements View.OnClickListe
                                 infobean.setWeibo(info.getWeibo());
                                 dialog.dismiss();
                                 Intent intent = new Intent(mContext, Register_next_education.class);
-//                                intent.putExtra("pagetype",pagetype);
+                                intent.putExtra("pagetype","register");
                                 startActivity(intent);
                                 getiscompany(false);
                                 finish();
@@ -405,10 +404,10 @@ public class Register_Commany_info extends Activity implements View.OnClickListe
                 overridePendingTransition(R.anim.activity_int_left, R.anim.activity_out_top);
                 break;
             case R.id.company_relevance_submit:
-                Intent intent = new Intent(mContext,Register_next_education.class);
-                intent.putExtra("pagetype","register");
-                startActivity(intent);
-//                getpersonal();
+//                Intent intent = new Intent(mContext,Register_next_education.class);
+//                intent.putExtra("pagetype","register");
+//                startActivity(intent);
+                getpersonal();
                 break;
 
         }
@@ -525,7 +524,7 @@ public class Register_Commany_info extends Activity implements View.OnClickListe
         try {
             imagefile.createNewFile();
             FileOutputStream fos = new FileOutputStream(imagefile);
-            colorImage.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            colorImage.compress(Bitmap.CompressFormat.JPEG, 50, fos);
             head = imagefile.getPath();
             fos.flush();
             fos.close();
